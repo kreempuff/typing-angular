@@ -13,7 +13,7 @@
 	<!-- <md-button class='md-primary md-raised' ui-sref="Purple">Button</md-button> -->
 	<div class="main" ng-controller="HomeController as vm">
 		<div ng-hide="vm.typingAnimationDone">
-			<h1 class="big-text">{{vm.type}}</h1>
+			<h1 class="big-text">{{vm.type.text}}</h1>
 			<div>
 				<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
 			</div>

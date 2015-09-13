@@ -1,19 +1,22 @@
 (function() {
-  'use strict'; 
+  'use strict';
   angular.module('app')
     .controller('HomeController', HomeController);
 
-  HomeController.$inject = ['$interval', "$state"];
+  HomeController.$inject = ['$interval', "$state", "$timeout"];
 
-  function HomeController($interval, $state) {
+  function HomeController($interval, $state, $timeout) {
     var vm = this;
-    vm.type = "";
-    vm.firstString = "Hi, my name is Kareem.";
+    vm.type = {
+      text: ""
+    };
+    vm.rightString = "Hi, my name is Kareem.";
+		vm.wrongString = "Your new Employee at <company name here>."
     vm.secondMessage = "MEAN Stack Developer.";
-    // vm.secondMessage = vm.secondMessage.split("");
     vm.secondType = [];
     vm.typingAnimationDone;
     vm.count = 0;
+		vm.done = false;
 
 
     // TYPING ANIMATION
@@ -26,41 +29,49 @@
 
 
     // FUNCTION FOR TYPING
-    vm.backspace = function(string, number) {
-			var stringToBeWorked = string.split("");
+    vm.backspace = function(string, number, funcToRunAfterBackspace) {
+      var stringToBeWorked = string.split("");
       var backspaceInterval = $interval(function() {
+        if (stringToBeWorked.length === number) {
+					$interval.cancel(backspaceInterval);
+					funcToRunAfterBackspace();
+				}
 
-        if (stringToBeWorked == number) $interval.cancel(backspaceInterval);
-				// console.log("Before: "+ stringToBeWorked);
         stringToBeWorked.splice(stringToBeWorked.length - 1, 1);
-				string = stringToBeWorked.join("");
-				// console.log("After: " + stringToBeWorked);
-      }, 75)
+        vm.type.text = stringToBeWorked.join("");
+      }, 50)
+
     }
-    vm.firstType = function() {
+    vm.firstType = function(string, backspacefunc) {
       var type = $interval(function() {
-        if (vm.type === vm.firstString) {
+        if (vm.type.text === string) {
           $interval.cancel(type);
-          vm.backspace(vm.type, 4);
-          vm.count = 0;
+					vm.count = 0;
+          backspacefunc(vm.type.text, 0, function () {
+          	vm.firstType(vm.rightString, function () {
+          		vm.MEANtype();
+          	});
+          });
+
           // vm.SecondType();
 
           return;
         }
-        vm.type += vm.firstString[vm.count];
+        vm.type.text += string[vm.count];
         vm.count += 1;
-      }, 175);
+      }, 145);
     }
 
-    vm.SecondType = function() {
+    vm.MEANtype = function() {
       var secondType = $interval(function() {
         if (vm.count === vm.secondMessage.length) {
           $interval.cancel(secondType);
-          vm.typingAnimationDone = true;
-          $state.go("Purple");
-        };
+        $timeout(function () {
+					vm.typingAnimationDone = true;
+        	$state.go("Purple")
+        }, 1000);
+			}
         vm.secondType.push(vm.secondMessage[vm.count]);
-        console.log(vm.count);
         vm.count += 1;
       }, 95)
     }
@@ -68,6 +79,6 @@
 
 
 
-    vm.firstType();
+    vm.firstType(vm.wrongString, vm.backspace);
   }
 })();
