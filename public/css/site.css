@@ -1,0 +1,54 @@
+html, body, .purple-template, div[ui-view] {
+  height: 100%;
+  width: 100%;
+}
+.main {
+  width: 100%;
+  display: inline-block;
+}
+@media screen and (min-width: 1000px){
+  .big-text {
+    font-size: 1em
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 999px){
+  .big-text {
+    font-size: 1em
+  }
+}
+
+#purple {
+  background-color: purple;
+  height: 100%;
+  width: 100%;
+}
+.mongo{
+  color: brown;
+
+}
+.express{
+  color: grey;
+}
+.angular{
+  color: red;
+}
+.node{
+  color: green;
+}
+/*ANIMATIONS*/
+
+@keyframes state-change {
+  from {
+    right: 100%;
+  }
+  to {
+    right: 0;
+  }
+}
+[ui-view].ng-enter {
+  position: relative;
+  animation: state-change 1.5s ease-in;
+}
+[ui-view].ng-leave {
+  display: none
+}

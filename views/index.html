@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+	<title>My App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.css">
+	<link rel="stylesheet" type="text/css" href="/css/site.css">
+</head>
+
+<body ng-cloak>
+	<!-- <md-button class='md-primary md-raised' ui-sref="Purple">Button</md-button> -->
+	<div class="main" ng-controller="HomeController as vm">
+		<div ng-hide="vm.typingAnimationDone">
+			<h1 class="big-text">{{vm.type}}</h1>
+			<div>
+				<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
+			</div>
+		</div>
+	</div>
+
+	<div ui-view></div>
+
+
+
+
+	<!-- Ext Libs -->
+	<script src="angular/angular.min.js"></script>
+	<script src="angular-ui-router/release/angular-ui-router.min.js"></script>
+	<script src="angular-animate/angular-animate.js"></script>
+	<script src="angular-aria/angular-aria.js"></script>
+	<script src="angular-material/angular-material.js"></script>
+	<!-- Global Src -->
+	<script src="/javascript/app.js"></script>
+	<script src="angular-smooth-scroll\angular-smooth-scroll.js"></script>
+	<!-- Factories -->
+	<script src="/javascript/services/HomeFactory.js"></script>
+	<!-- Controllers -->
+	<script src="/javascript/controllers/HomeController.js"></script>
+	<script src="/javascript/controllers/PurpleController.js"></script>
+</body>
+
+</html>
