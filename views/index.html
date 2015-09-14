@@ -4,9 +4,12 @@
 <head>
 	<title>My App</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css"> -->
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.css">
-	<link rel="stylesheet" type="text/css" href="/css/site.css">
+	<link rel="stylesheet" type="text/css" href="/css/jose.css">
+	<link rel="stylesheet" type="text/css" href="/css/kandy.css">
+	<link rel="stylesheet" type="text/css" href="/css/animateState.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 </head>
 
 <body ng-cloak>
@@ -14,12 +17,58 @@
 	<div class="main" ng-controller="HomeController as vm">
 		<div ng-hide="vm.typingAnimationDone">
 			<h1 class="big-text">{{vm.type.text}}</h1>
-			<div>
+			<div id=secondMessage>
 				<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
 			</div>
 		</div>
-	</div>
 
+		<div id="navigation" ng-class="{navbaranimate: vm.done}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+
+			<div id="name">
+				<h1>Kandianne Pierre</h1>
+				<h6>Web Developer</h6>
+			</div>
+
+			<div class="portNames">
+				<a href="https://www.google.com/?gws_rd=ssl" title="Skills" ui-sref="Skills">
+					<span style="color:blue;" class="glyphicon glyphicon-signal"></span>
+					<span class="titles">SKILLS</span>
+				</a>
+			</div>
+
+			<div class="portNames">
+				<a title="Experience" ui-sref="Experience"><i style="color:green;" class="fa fa-briefcase"></i><span class="titles">EXPERIENCE</span></a>
+			</div>
+
+			<div class="portNames">
+				<a title="Education" ui-sref="Education"><i style="color:orange;" class="fa fa-graduation-cap"></i><span class="titles">EDUCATION</span></a>
+			</div>
+
+			<div class="portNames">
+				<a title="Portfolio" ui-sref="Portfolio">
+					<span style="color:purple;" class="glyphicon glyphicon-paperclip"></span>
+					<span class="titles">PORTFOLIO</span>
+				</a>
+			</div>
+
+			<div class="contact">
+				<a ui-sref="Contact" title="Contact">
+					<span class="glyphicon glyphicon-envelope"></span>
+					<span class="titles">
+						<br/>kandipierre@gmail.com</span>
+				</a>
+			</div>
+
+			<div class="contact2">
+				<a title="Contact">
+					<span class="glyphicon glyphicon-globe"></span>
+					<span class="titles">
+						<br/>Los Angeles, CA</span>
+				</a>
+			</div>
+
+		</div>
+	</div>
 	<div ui-view></div>
 
 
@@ -38,7 +87,8 @@
 	<script src="/javascript/services/HomeFactory.js"></script>
 	<!-- Controllers -->
 	<script src="/javascript/controllers/HomeController.js"></script>
-	<script src="/javascript/controllers/PurpleController.js"></script>
+	<!-- <script src="/javascript/controllers/EducationController.js"></script> -->
+	<!-- <script src="/javascript/controllers/redController.js"></script> -->
 </body>
 
 </html>

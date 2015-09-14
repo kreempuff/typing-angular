@@ -10,16 +10,16 @@
     vm.type = {
       text: ""
     };
-    vm.rightString = "Hi, my name is Kareem.";
-		vm.wrongString = "Your new Employee at <company name here>."
-    vm.secondMessage = "MEAN Stack Developer.";
+    vm.rightString = "I mean: Hi, my name is Kareem.";
+    vm.wrongString = "Hey I'm desperate, please hire me."
+    vm.secondMessage = "I just became a MEAN Stack Developer.";
     vm.secondType = [];
     vm.typingAnimationDone;
     vm.count = 0;
-		vm.done = false;
+    vm.done = false;
 
 
-    // TYPING ANIMATION
+
 
 
 
@@ -33,9 +33,9 @@
       var stringToBeWorked = string.split("");
       var backspaceInterval = $interval(function() {
         if (stringToBeWorked.length === number) {
-					$interval.cancel(backspaceInterval);
-					funcToRunAfterBackspace();
-				}
+          $interval.cancel(backspaceInterval);
+          funcToRunAfterBackspace();
+        }
 
         stringToBeWorked.splice(stringToBeWorked.length - 1, 1);
         vm.type.text = stringToBeWorked.join("");
@@ -46,11 +46,11 @@
       var type = $interval(function() {
         if (vm.type.text === string) {
           $interval.cancel(type);
-					vm.count = 0;
-          backspacefunc(vm.type.text, 0, function () {
-          	vm.firstType(vm.rightString, function () {
-          		vm.MEANtype();
-          	});
+          vm.count = 0;
+          backspacefunc(vm.type.text, 0, function() {
+            vm.firstType(vm.rightString, function() {
+              vm.MEANtype();
+            });
           });
 
           // vm.SecondType();
@@ -59,21 +59,22 @@
         }
         vm.type.text += string[vm.count];
         vm.count += 1;
-      }, 145);
+      }, 70);
     }
 
     vm.MEANtype = function() {
       var secondType = $interval(function() {
         if (vm.count === vm.secondMessage.length) {
           $interval.cancel(secondType);
-        $timeout(function () {
-					vm.typingAnimationDone = true;
-        	$state.go("Purple")
-        }, 1000);
-			}
+          $timeout(function() {
+            vm.typingAnimationDone = true;
+            vm.done = true;
+            // $state.go("Experience");
+          }, 500);
+        }
         vm.secondType.push(vm.secondMessage[vm.count]);
         vm.count += 1;
-      }, 95)
+      }, 50)
     }
 
 

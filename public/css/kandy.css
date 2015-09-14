@@ -1,0 +1,77 @@
+
+#navigation {
+  z-index: 9999;
+  font-size: 1.3em;
+  /*THIS IS FOR GLYPHICON SIZES*/
+  height: 100%;
+  position: fixed;
+  right: 100%;
+  top: 0;
+
+  color: #200000;
+  background-color: white;
+  padding: 0px;
+  box-shadow: 3px 4px 9px white;
+}
+#navigation a {
+  color: #200000;
+  padding-left: 13px;
+  padding-right: 13px;
+  width: 130px;
+  padding: 0px auto auto auto;
+  text-align: center;
+}
+#navigation a:hover {
+  font-weight: bold;
+  text-decoration: none;
+}
+.titles {
+  font-size: .7em;
+  padding-left: 19px;
+}
+#name {
+  height: 200px;
+  border-bottom: solid thin #200000;
+  text-align: center;
+  background-color: #f7d7d7;
+  margin-top: 0px;
+  padding-top: 1.3em;
+}
+.portNames, .contact {
+  border-bottom: solid thin #200000;
+  padding: 19px 6px;
+}
+.contact, .contact2 {
+  height: 19%;
+  padding: 2.7em;
+  text-align: center;
+  margin: auto;
+  background-color: #f7d7d7;
+}
+
+/*---------MEDIA QUERIES-------------------- */
+
+@media only screen and (max-width: 480px) {
+  .titles {
+    display: none;
+  }
+  #navigation, .contact {
+    width: 3em;
+  }
+  #navigation a:active {
+    color: #200000;
+  }
+  .portNames {
+    padding: 2.3em 1.3em 1.76em .2em;
+  }
+  .contact {
+    padding: 96px 0px 30px 0px;
+    height: 36%;
+  }
+  .contact2 {
+    display: none;
+  }
+  #name {
+    display: none;
+  }
+}
