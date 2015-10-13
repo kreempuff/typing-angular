@@ -1,23 +1,27 @@
+.page{
+  background-color: rgba(255, 255, 255, 1);
+}
+
 .nopadding{
  padding: 0;
 }
 #experienceBox{
- background-color: #3498db;
+ background-color: #B71C1C;
  height: 250px;
  width: 100%;
 }
 #educationBox{
- background-color: #FF5252;
+ background-color: #B71C1C;
  height: 250px;
  width: 100%;
 }
 #aboutBox{
- background-color: #3498db;
+ background-color: #B71C1C;
  height: 250px;
  width: 100%;
 }
 #projectBox{
- background-color: #3498db;
+ background-color: #B71C1C;
  height: 250px;
  width: 100%;
 }

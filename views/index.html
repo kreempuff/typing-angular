@@ -6,56 +6,62 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.css">
-	<link rel="stylesheet" type="text/css" href="/css/jose.css">
-	<link rel="stylesheet" type="text/css" href="/css/kandy.css">
+	<link rel="stylesheet" type="text/css" href="/css/pages.css">
+	<link rel="stylesheet" type="text/css" href="/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="/css/animateState.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
+
 </head>
 
 <body ng-cloak>
 	<!-- <md-button class='md-primary md-raised' ui-sref="Purple">Button</md-button> -->
-	<div class="main" ng-controller="HomeController as vm">
+	<!-- <div ng-cloak class="main" ng-controller="HomeController as vm">
 		<div ng-hide="vm.typingAnimationDone">
 			<h1 class="big-text">{{vm.type.text}}</h1>
 			<div id=secondMessage>
-				<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
+				<h4>
+					<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
+				</h4>
 			</div>
-		</div>
-
-		<div id="navigation" ng-class="{navbaranimate: vm.done}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
+		</div> -->
+<!-- vm.typingAnimationDone -->
+		<div id="navigation" ng-show="true" ng-class="{navbaranimate: true}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 ">
 
 			<div id="name">
-				<h1>Kandianne Pierre</h1>
+				<h1>Kareem March</h1>
 				<h6>Web Developer</h6>
 			</div>
 
 			<div class="portNames">
-				<a href="https://www.google.com/?gws_rd=ssl" title="Skills" ui-sref="Skills">
-					<span style="color:blue;" class="glyphicon glyphicon-signal"></span>
-					<span class="titles">SKILLS</span>
+				<a title="About" ui-sref="About">
+					<span class="glyphicon glyphicon-user icons"></span><br>
+					<span class="titles">About</span>
 				</a>
 			</div>
 
 			<div class="portNames">
-				<a title="Experience" ui-sref="Experience"><i style="color:green;" class="fa fa-briefcase"></i><span class="titles">EXPERIENCE</span></a>
+				<a title="Experience"  ui-sref="Experience"><i class="fa fa-briefcase icons"></i><br>
+					<span class="titles">Experience</span></a>
 			</div>
 
 			<div class="portNames">
-				<a title="Education" ui-sref="Education"><i style="color:orange;" class="fa fa-graduation-cap"></i><span class="titles">EDUCATION</span></a>
+				<a title="Education"  ui-sref="Education"><i  class="fa fa-graduation-cap icons"></i><br>
+					<span class="titles">Education</span></a>
 			</div>
 
 			<div class="portNames">
 				<a title="Portfolio" ui-sref="Portfolio">
-					<span style="color:purple;" class="glyphicon glyphicon-paperclip"></span>
-					<span class="titles">PORTFOLIO</span>
+					<span class="glyphicon glyphicon-paperclip icons"></span><br>
+					<span class="titles">Portfolio</span>
 				</a>
 			</div>
 
-			<div class="contact">
+			<!-- <div class="contact">
 				<a ui-sref="Contact" title="Contact">
 					<span class="glyphicon glyphicon-envelope"></span>
 					<span class="titles">
-						<br/>kandipierre@gmail.com</span>
+						<br/>kareemmarch@gmail.com</span>
 				</a>
 			</div>
 
@@ -63,9 +69,9 @@
 				<a title="Contact">
 					<span class="glyphicon glyphicon-globe"></span>
 					<span class="titles">
-						<br/>Los Angeles, CA</span>
+						<br/>Oakland, CA</span>
 				</a>
-			</div>
+			</div> -->
 
 		</div>
 	</div>

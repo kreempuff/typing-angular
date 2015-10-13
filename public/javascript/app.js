@@ -6,12 +6,16 @@
 	function Config($stateProvider, $urlRouterProvider) {
 		$stateProvider.state('Education', {
 			templateUrl: 'views/education.html',
-			// controller: "EducationnController",
-			// controllerAs: "vm"
+
 		}).state('Experience',{
 			templateUrl: 'views/experience.html',
-			// controller: "RedController",
-			// controllerAs: "vm"
+
+		}).state('About', {
+			templateUrl: 'views/about.html',
+
+		}).state('Portfolio',{
+			templateUrl: 'views/projects.html',
+
 		});
 		$urlRouterProvider.otherwise('/');
 	}

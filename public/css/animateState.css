@@ -1,30 +1,27 @@
 html, body, .purple-template, div[ui-view] {
   height: 100%;
   width: 100%;
+  font-family: "Roboto"
 }
 .main {
   width: 100%;
   display: inline-block;
 }
+@media screen and (max-width:480px) {
+  .navbaranimate {
+    position: fixed;
+    left: 0;
+  }
+}
 @media screen and (min-width: 1000px) {
   .big-text {
-    font-size: 5em
+    font-size: 2em;
   }
 }
 @media screen and (min-width: 700px) and (max-width: 999px) {
   .big-text {
-    font-size: 10em
+    font-size: 3em;
   }
-}
-#purple {
-  background-color: purple;
-  height: 100%;
-  width: 100%;
-}
-#red {
-  background-color: red;
-  height: 100%;
-  width: 100%;
 }
 #secondMessage {
   font-weight: bold;
@@ -43,33 +40,36 @@ html, body, .purple-template, div[ui-view] {
 }
 
 /*ANIMATIONS*/
-@keyframes animate-navbar {
-  from {
-    right: 100%;
+
+@media screen and (min-width:1000px) {
+  @keyframes animate-navbar {
+    from {
+      right: 100%;
+    }
+    to {
+      right: 83.29%;
+    }
   }
-  to{
-    right: 83.3%;
+  .navbaranimate {
+    animation: animate-navbar .3s ease-in;
+    animation-fill-mode: forwards;
   }
-}
-.navbaranimate {
-  animation: animate-navbar .3s ease-in;
-  animation-fill-mode: forwards;
-}
-@keyframes state-change {
-  from {
-    right: 100%;
+  @keyframes state-change {
+    from {
+      right: 100%;
+    }
+    to {
+      right: 0;
+    }
   }
-  to {
-    right: 0;
+  [ui-view].ng-enter {
+    position: absolute;
+    /*z-index: 200;*/
+    animation: state-change 1s ease-in;
   }
-}
-[ui-view].ng-enter {
-  position: absolute;
-  /*z-index: 200;*/
-  animation: state-change 1.5s ease-in;
-}
-[ui-view].ng-leave {
-  position: absolute;
-  /*z-index: -1*/
-  animation: state-change 1s reverse;
+  [ui-view].ng-leave {
+    position: absolute;
+    z-index: 2;
+    animation: state-change 1s reverse;
+  }
 }
