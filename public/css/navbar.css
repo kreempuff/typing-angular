@@ -34,12 +34,13 @@
   padding-left: 8px;
 }
 #name {
-  height: 30%;
+  height: 18%;
   text-align: center;
   background-color: #F44336;
   margin-top: 0px;
   padding-top: 1.3em;
   color: white;
+  box-shadow: 0 -6px 47px black;
 }
 .portNames, .contact {
   text-align: center;
