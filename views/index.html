@@ -2,12 +2,10 @@
 <html ng-app="app">
 
 <head>
-	<title>My App</title>
+	<title>Kareem March</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.css">
-	<link rel="stylesheet" type="text/css" href="/css/pages.css">
-	<link rel="stylesheet" type="text/css" href="/css/navbar.css">
 	<link rel="stylesheet" type="text/css" href="/css/animateState.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
@@ -15,7 +13,8 @@
 </head>
 
 <body ng-cloak>
-	<div ng-cloak class="main" ng-controller="HomeController as vm">
+	<div ng-cloak class="main" ng-controller="MainController as vm">
+		<md-button ng-hide="vm.typingAnimationDone" class="md-mini md-primary md-raised" ng-click='vm.typingAnimationDone = !vm.typingAnimationDone'>Skip</md-button>
 		<div ng-hide="vm.typingAnimationDone">
 			<h1 class="big-text">{{vm.type.text}}</h1>
 			<div id=secondMessage>
@@ -26,12 +25,47 @@
 		</div>
 
 
-		<div ng-show='vm.typingAnimationDone' id="name">
+		<div ng-show='vm.typingAnimationDone' id="name" ng-class="{fadeIn: vm.typingAnimationDone}">
 			<h1>Kareem March</h1>
 			<h3>Web Developer</h3>
 		</div>
+		<br>
+		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone' class="text-center">
+			<span><a href="https://github.com/lentusignavus" target="_blank"><i class="fa fa-github fa-3x"></i></a></span>
+			<span style="min-width: 5%">
 
+				</span>
+			<span><a href="https://www.linkedin.com/pub/kareem-march/5a/466/ba4" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></span>
+		</div>
+		<!-- <span><a href=""><i class="fa fa-github"></i></a></span> -->
+		<br>
+		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone' id="about-me">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h1 class="pageHeading">About Me</h1>
+								<h2>tl;dr: I'm human</h2>
+							</div>
+							<div class="panel-body">
+								<h3>Idk bruh. I'm black (to be more accurate I'm brown but people like to simplify things so people colors go black, white, brown, and yellow. Sidenote: I have yet to see a yellow human but hey whatevs).
+									<br> I'm into tech and spiritual shit. My body is young, dumb, and energetic. My mind is old, wise, and introspective.
+									<br>
+									<br> I'm still tryna figure this life shit out. I can utilize words like ubiquitous and prestidigitation to the highest levels of efficacy, to weave gut-wrenching tales of drama and romance, realistic enough to maintain the authenticity of a biography,
+									but stretched enough to categorize it as a fantasy. I am fluent in ebonics. If you think the word "Nigga" is inappropriate then we need to have a conversation about words, exclusivity, and their meaning in certain societal contexts.
+									<br>
+									<br> I'm a hypocrite. If you believe that you aren't, again, we need to have a conversation. I believe everything in life is predestined but by the same token life is what you make it. Bruh I'm just human. Here's a link to my <a href="http://medium.com/@kareemmarch"
+									target="_blank">blog</a>. Tell me if it inspires you. </h3>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	<!--END OF CONTROLLER -->
 
 
 	<!-- Ext Libs -->
@@ -43,12 +77,6 @@
 	<!-- Global Src -->
 	<script src="/javascript/app.js"></script>
 	<script src="angular-smooth-scroll\angular-smooth-scroll.js"></script>
-	<!-- Factories -->
-	<script src="/javascript/services/HomeFactory.js"></script>
-	<!-- Controllers -->
-	<script src="/javascript/controllers/HomeController.js"></script>
-	<!-- <script src="/javascript/controllers/EducationController.js"></script> -->
-	<!-- <script src="/javascript/controllers/redController.js"></script> -->
 </body>
 
 </html>

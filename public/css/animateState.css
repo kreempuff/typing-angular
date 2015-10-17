@@ -1,11 +1,30 @@
-html, body, .purple-template, div[ui-view] {
+html, body {
   height: 100%;
   width: 100%;
-  font-family: "Roboto"
+  font-family: "Roboto";
+  font-size: 1.2em;
+}
+#about-me{
+  font-size: 1.2em;
+
 }
 .main {
   width: 100%;
   display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #F44336;
+}
+a:hover {
+  color: #00AB6B;
+  opacity: 0.7;
+  text-decoration: none;
+}
+a:visited {
+  color: darkgreen;
+  opacity: 1;
 }
 @media screen and (max-width:480px) {
   .navbaranimate {
@@ -39,37 +58,29 @@ html, body, .purple-template, div[ui-view] {
   color: green;
 }
 
-/*ANIMATIONS*/
+.fadeIn{
+animation: 1s fadeIn;
+animation-fill-mode: forwards;
 
-@media screen and (min-width:1000px) {
-  @keyframes animate-navbar {
-    from {
-      right: 100%;
-    }
-    to {
-      right: 83.29%;
-    }
+}
+
+#name {
+  height: 18%;
+  text-align: center;
+  background-color: #F44336;
+  margin-top: 0px;
+  padding-top: 1.3em;
+  color: white;
+  box-shadow: 0 -6px 47px black;
+  opacity: 0;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  .navbaranimate {
-    animation: animate-navbar .3s ease-in;
-    animation-fill-mode: forwards;
-  }
-  @keyframes state-change {
-    from {
-      right: 100%;
-    }
-    to {
-      right: 0;
-    }
-  }
-  [ui-view].ng-enter {
-    position: absolute;
-    /*z-index: 200;*/
-    animation: state-change 1s ease-in;
-  }
-  [ui-view].ng-leave {
-    position: absolute;
-    z-index: 2;
-    animation: state-change 1s reverse;
+  to {
+    opacity: 1;
   }
 }
