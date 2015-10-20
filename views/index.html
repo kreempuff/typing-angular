@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/angular-material/angular-material.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/animateState.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.min.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:400,500' rel='stylesheet' type='text/css'>
 
@@ -31,18 +31,22 @@
 		</div>
 		<br>
 		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone' class="text-center">
-			<span><a href="https://github.com/lentusignavus" target="_blank"><i class="fa fa-github fa-3x"></i></a></span>
-			<span style="min-width: 5%">
-
-				</span>
-			<span><a href="https://www.linkedin.com/pub/kareem-march/5a/466/ba4" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></span>
-			<span><a href="mailto:ignavus.ii@gmail.com?Subject=Website%20Email" target="_blank"><i class="fa fa-envelope fa-3x"></i></a></span>
-
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+				<span><a href="https://github.com/lentusignavus" target="_blank"><i class="fa fa-github fa-3x"></i></a></span>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+				<span><a href="https://www.linkedin.com/pub/kareem-march/5a/466/ba4" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></span>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+				<span><a href="mailto:ignavus.ii@gmail.com?Subject=Website%20Email" target="_blank"><i class="fa fa-envelope fa-3x"></i></a></span>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+				<span><a href="http://medium.com/@kareemmarch" target="_blank"><i class="fa fa-pencil-square-o fa-3x"></i></a></span>
+			</div>
 			<br>
-			<md-button ng-hide='vm.showAbout' class="md-mini md-primary md-raised" ng-click='vm.showAbout = !vm.showAbout'>About Me</md-button>
+			<md-button ng-hide='vm.showAbout' class="md-mini md-accent md-raised" ng-click='vm.showAbout = !vm.showAbout'>About Me</md-button>
 
 		</div>
-		<!-- <span><a href=""><i class="fa fa-github"></i></a></span> -->
 		<br>
 		<div ng-class="{fadeIn: vm.showAbout}" ng-show='vm.showAbout' id="about-me">
 			<div class="container-fluid">
@@ -50,7 +54,9 @@
 					<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 						<div class="panel panel-default">
 							<div class="panel-heading">
-								<h1 class="pageHeading">About Me <md-button class='md-raised' ng-click="vm.showAbout = !vm.showAbout">Hide me</md-button></h1>
+								<h1 class="pageHeading">About Me
+									<md-button class='md-raised' ng-click="vm.showAbout = !vm.showAbout">Hide me</md-button>
+								</h1>
 								<h2>tl;dr: I'm human</h2>
 							</div>
 							<div class="panel-body">
@@ -62,9 +68,9 @@
 									<br>
 									<br> I'm a hypocrite. If you believe that you aren't, again, we need to have a conversation. I believe everything in life is predestined but by the same token life is what you make it. Bruh I'm just human. Here's a link to my <a href="http://medium.com/@kareemmarch"
 									target="_blank">blog</a>. Tell me if it inspires you. </h3>
-									<p>Life is weird man. People will read something about you and not give you the time of day because of their own convictions.</p>
-									<h2>Contact</h2>
-									<p>If you need an application built, wanna pick my brain, or get in contact with me for a job opportnity, click the email picture above. If it doesn't work just send an email to ignavus.ii@gmail.com</p>
+								<p>Life is weird man. People will read something about you and not give you the time of day because of their own convictions.</p>
+								<h2>Contact</h2>
+								<p>If you need an application built, wanna pick my brain, or get in contact with me for a job opportnity, click the email picture above. If it doesn't work just send an email to ignavus.ii@gmail.com</p>
 							</div>
 						</div>
 
@@ -82,7 +88,7 @@
 	<script src="angular-aria/angular-aria.min.js"></script>
 	<script src="angular-material/angular-material.min.js"></script>
 	<!-- Global Src -->
-	<script src="/javascript/app.js"></script>
+	<script src="/javascript/main.min.js"></script>
 </body>
 
 </html>

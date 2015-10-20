@@ -1,36 +1,26 @@
+$primaryColor: #F44336;
+
 html, body {
   height: 100%;
   width: 100%;
   font-family: "Roboto";
   font-size: 1.2em;
 }
-#about-me{
+#about-me {
   font-size: 1.2em;
-
 }
 .main {
   width: 100%;
   display: inline-block;
 }
-
 a {
   text-decoration: none;
   color: #F44336;
 }
 a:hover {
-  color: #00AB6B;
+  color: #673AB7;
   opacity: 0.7;
   text-decoration: none;
-}
-a:visited {
-  color: darkgreen;
-  opacity: 1;
-}
-@media screen and (max-width:480px) {
-  .navbaranimate {
-    position: fixed;
-    left: 0;
-  }
 }
 @media screen and (min-width: 1000px) {
   .big-text {
@@ -57,25 +47,20 @@ a:visited {
 .node {
   color: green;
 }
-
-.fadeIn{
-animation: 1s fadeIn;
-animation-fill-mode: forwards;
-
+.fadeIn {
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
 }
-
 #name {
   height: 18%;
   text-align: center;
-  background-color: #F44336;
+  background-color: $primaryColor;
   margin-top: 0px;
   padding-top: 1.3em;
   color: white;
   box-shadow: 0 -6px 47px black;
   opacity: 0;
 }
-
-
 @keyframes fadeIn {
   from {
     opacity: 0;

@@ -1,0 +1,92 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: "Roboto";
+  font-size: 1.2em;
+}
+
+#about-me {
+  font-size: 1.2em;
+}
+
+.main {
+  width: 100%;
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #F44336;
+}
+
+a:hover {
+  color: #673AB7;
+  opacity: 0.7;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 1000px) {
+  .big-text {
+    font-size: 2em;
+  }
+}
+@media screen and (min-width: 700px) and (max-width: 999px) {
+  .big-text {
+    font-size: 3em;
+  }
+}
+#secondMessage {
+  font-weight: bold;
+}
+
+.mongo {
+  color: brown;
+}
+
+.express {
+  color: grey;
+}
+
+.angular {
+  color: red;
+}
+
+.node {
+  color: green;
+}
+
+.fadeIn {
+  -webkit-animation: 1s fadeIn;
+          animation: 1s fadeIn;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+#name {
+  height: 18%;
+  text-align: center;
+  background-color: #F44336;
+  margin-top: 0px;
+  padding-top: 1.3em;
+  color: white;
+  box-shadow: 0 -6px 47px black;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
