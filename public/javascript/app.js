@@ -83,7 +83,9 @@
     }
 
     angular.element(document).ready(function () {
-      vm.newMessageForRedesign();
+      $timeout(function () {
+        vm.newMessageForRedesign();
+      }, 2000)
     })
 
 
