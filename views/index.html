@@ -27,27 +27,38 @@
 
 		<div ng-show='vm.typingAnimationDone' id="name" ng-class="{fadeIn: vm.typingAnimationDone}">
 			<h1>Kareem March</h1>
-			<h3>Web Developer</h3>
+			<h3>Mean Stack Web Developer</h3>
+			<p>Aspiring Mobile Engineer</p>
 		</div>
 		<br>
 		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone' class="text-center">
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<span><a href="https://github.com/lentusignavus" target="_blank"><i class="fa fa-github fa-3x"></i></a></span>
+				<span><a class='link' href="https://github.com/lentusignavus" target="_blank"><i class="fa fa-github fa-3x"></i></a></span>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<span><a href="https://www.linkedin.com/pub/kareem-march/5a/466/ba4" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></span>
+				<span><a class='link' href="https://www.linkedin.com/pub/kareem-march/5a/466/ba4" target="_blank"><i class="fa fa-linkedin-square fa-3x"></i></a></span>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<span><a href="mailto:ignavus.ii@gmail.com?Subject=Website%20Email" target="_blank"><i class="fa fa-envelope fa-3x"></i></a></span>
+				<span><a class='link' href="mailto:ignavus.ii@gmail.com?Subject=Website%20Email" target="_blank"><i class="fa fa-envelope fa-3x"></i></a></span>
 			</div>
 			<div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
-				<span><a href="http://medium.com/@kareemmarch" target="_blank"><i class="fa fa-pencil-square-o fa-3x"></i></a></span>
+				<span><a class='link' href="http://medium.com/@kareemmarch" target="_blank"><i class="fa fa-pencil-square-o fa-3x"></i></a></span>
 			</div>
 			<br>
 			<md-button ng-hide='vm.showAbout' class="md-mini md-accent md-raised" ng-click='vm.showAbout = !vm.showAbout'>About Me</md-button>
 
 		</div>
 		<br>
+		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone' class="text-center">
+			<img id='logos' src="http://siliconangle.com/files/2015/01/MongoDB_Logo.png" alt="MongoLogo">
+			<img id='logos' src="https://avatars1.githubusercontent.com/u/5658226?v=3&s=400" alt="NodeLogo">
+			<img id='logos' src="http://jeremyzander.com/images/angular.png" alt="AngularLogo"> &nbsp; &nbsp;
+			<img id='logos' src="http://indie-soft.com/a100/assets/img/tech/node-js.png" alt="NodeLogo">
+		</div>
+		<!-- https://avatars1.githubusercontent.com/u/5658226?v=3&s=400 -->
+		<!-- <object id='nodeLogo' type="image/svg+xml" data="images/Node.js_logo.svg">Your browser does not support SVG</object>
+		<object id='javascriptLogo' type="image/svg+xml" data="images/js-logo-badge.svg">Your browser does not support SVG</object>
+		<object id='jQueryLogo' type="image/svg+xml" data="images/jQuery_logo.svg">Your browser does not support SVG</object> -->
 		<div ng-class="{fadeIn: vm.showAbout}" ng-show='vm.showAbout' id="about-me">
 			<div class="container-fluid">
 				<div class="row">
@@ -78,11 +89,22 @@
 				</div>
 			</div>
 		</div>
+
+<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone && !vm.showAbout'>
+	<div class="container">
+	  <div class="red flame"></div>
+	  <div class="orange flame"></div>
+	  <div class="yellow flame"></div>
+	  <div class="white flame"></div>
+	  <div class="blue circle"></div>
+	  <div class="black circle"></div>
 	</div>
-	<!--END OF CONTROLLER -->
+</div>
 
-
+	</div>
+<!--END OF CONTROLLER -->
 	<!-- Ext Libs -->
+	<script src="jquery/dist/jquery.min.js"></script>
 	<script src="angular/angular.min.js"></script>
 	<script src="angular-animate/angular-animate.min.js"></script>
 	<script src="angular-aria/angular-aria.min.js"></script>

@@ -1,10 +1,21 @@
-$primaryColor: #F44336;
-
-html, body {
+@import 'flame';
+$primaryColor: darken(#F44336, 10%);
+$secondaryColor: darken(#673AB7, 20%);
+button.md-primary {
+  background-color: $primaryColor !important;
+}
+button.md-accent {
+  background-color: $secondaryColor !important;
+}
+html,
+body {
   height: 100%;
   width: 100%;
   font-family: "Roboto";
   font-size: 1.2em;
+}
+.big-text{
+  color: white;
 }
 #about-me {
   font-size: 1.2em;
@@ -13,14 +24,45 @@ html, body {
   width: 100%;
   display: inline-block;
 }
-a {
-  text-decoration: none;
-  color: #F44336;
+#logos{
+  width: 100px;
+  height: 100px
 }
-a:hover {
-  color: #673AB7;
-  opacity: 0.7;
+// object {
+//   &#nodeLogo {
+//     width: 300px;
+//     height: 100px
+//   }
+//   &#javascriptLogo {
+//     width: 100px;
+//     height: 100px;
+//   }
+//   &#jQueryLogo {
+//     width: 100px;
+//     height: 100px;
+//   }
+// }
+a.link {
   text-decoration: none;
+  color: $primaryColor;
+  transition: 0.2s;
+  &:hover {
+    color: $secondaryColor;
+  }
+}
+.scale {
+  animation: scale 0.1s ease-in;
+  animation-fill-mode: forwards;
+}
+@keyframes scale {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
 }
 @media screen and (min-width: 1000px) {
   .big-text {
@@ -55,10 +97,10 @@ a:hover {
   height: 18%;
   text-align: center;
   background-color: $primaryColor;
-  margin-top: 0px;
+  margin-top: 0;
   padding-top: 1.3em;
-  color: white;
-  box-shadow: 0 -6px 47px black;
+  color: black;
+  box-shadow: 0 -6px 47px white;
   opacity: 0;
 }
 @keyframes fadeIn {

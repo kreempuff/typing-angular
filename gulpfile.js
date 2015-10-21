@@ -42,19 +42,22 @@ gulp.task('templates' , function(){
 });
 
 gulp.task('images', function () {
-    return gulp.src('src/assets/images/*')
+    return gulp.src('public/images/*')
         .pipe(imagemin({
             progressive: true,
             svgoPlugins: [{removeViewBox: false}]
         }))
-        .pipe(gulp.dest('dist/assets/images'))
+        .pipe(gulp.dest('dist/images'))
         .pipe(notify({message:"Compressed HTML."}));
 });
 
 gulp.task('start', function() {
     livereload.listen();
 
+
     gulp.watch(['public/**', 'views/index.html']).on('change', livereload.changed);
+
+    gulp.watch(['public/images/*'], ['images']);
 
     gulp.watch(['public/javascript/*.js', 'public/javascript/**/*.js'], ['scripts']);
 
