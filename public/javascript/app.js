@@ -28,15 +28,63 @@
     vm.rightString = "I mean: Hi, my name is Kareem.";
     vm.wrongString = "Hey I'm desperate, please hire me.";
     vm.secondMessage = "I just became a MEAN Stack Developer.";
+    var sentence1 = "I wasn't always a javascript ninja..";
+    var sentence2 = "Like batman I spent weeks"
+    var sentence3 = "....years in the dark honing my skills. And now, I have emerged from my cave ready to tackle the challenges of professional software development."
     vm.secondType = [];
     vm.typingAnimationDone;
     vm.count = 0;
     vm.done = false;
+    vm.newMessageForRedesign = ninjaText;
+
+    function ninjaText() {
+      var ninTexElem = angular.element('#ninjaText');
+      ninTexElem.css('opacity', '0');
+      ninTexElem.html(sentence1);
+      ninTexElem.animate({
+        'opacity': '1'
+      }, 1000);
+      $timeout(function() {
+        ninTexElem.animate({
+          'opacity': '0'
+        }, 1500);
+
+        $timeout(function() {
+          ninTexElem.html(sentence2);
+          ninTexElem.animate({
+            'opacity': '1'
+          }, 2000);
+          $timeout(function() {
+            ninTexElem.append('<span id="secondText"></span>');
+            angular.element("#secondText").css('opacity', '0');
+            angular.element("#secondText").html(sentence3);
+            angular.element("#secondText").animate({
+              'opacity': '1'
+            }, 2000);
+            $timeout(function() {
+              ninTexElem.animate({
+                'opacity': '0'
+              }, 2000);
+              $timeout(function() {
+                vm.typingAnimationDone = true;
+
+              }, 2000)
+            }, 6000)
+          }, 3000)
+
+
+        }, 2000)
+
+
+      }, 2000)
 
 
 
+    }
 
-
+    angular.element(document).ready(function () {
+      vm.newMessageForRedesign();
+    })
 
 
 
@@ -92,6 +140,6 @@
 
 
 
-    vm.firstType(vm.wrongString, vm.backspace);
+    // vm.firstType(vm.wrongString, vm.backspace);
   }
 })();

@@ -15,14 +15,21 @@
 <body ng-cloak>
 	<div ng-cloak class="main" ng-controller="MainController as vm">
 		<md-button ng-hide="vm.typingAnimationDone" class="md-mini md-primary md-raised" ng-click='vm.typingAnimationDone = !vm.typingAnimationDone'>Skip</md-button>
+
 		<div ng-hide="vm.typingAnimationDone">
+			<h1 id="ninjaText"></h1>
+		</div>
+
+
+
+		<!-- <div ng-hide="vm.typingAnimationDone">
 			<h1 class="big-text">{{vm.type.text}}</h1>
 			<div id=secondMessage>
 				<h4>
 					<span class="big-text" ng-repeat="letter in vm.secondType track by $index" ng-class="{mongo: letter === 'M', express: letter === 'E', angular: letter === 'A', node: letter === 'N'}">{{letter}}</span>
 				</h4>
 			</div>
-		</div>
+		</div> -->
 
 
 		<div ng-show='vm.typingAnimationDone' id="name" ng-class="{fadeIn: vm.typingAnimationDone}">
@@ -71,17 +78,24 @@
 								<h2>tl;dr: I'm human</h2>
 							</div>
 							<div class="panel-body">
-								<h3>Idk bruh. I'm black (to be more accurate I'm brown but people like to simplify things so people colors go black, white, brown, and yellow. Sidenote: I have yet to see a yellow human but hey whatevs).
-									<br> I'm into tech and spiritual shit. My body is young, dumb, and energetic. My mind is old, wise, and introspective.
+								<h3>I started my programming journey about 2 years ago with a class at college called Lego Robotics..
+									and I LOVED it!
+									<br><br>
+									Since then I have been doing countless tutorials on code.org, codecademy, YouTube, Udacity, Udemy, and edX. <br><br>I have joined 3 main coding challenge sites: CodeEval, HackerRank, and Coderbytes to sharpen my skills at least once a day
+									<br><br>
+									I have even joined FreeCodeCamp.com and moved all the way to Cali from NY to attend a programming bootcamp.
+									<br><br>And I'm not done yet! I want to build android and ios apps as well as program everyday items for the coming IoT age.
+
+									<br><br> I'm really into tech, cartoons, and I can eat 3 large dominos pizzas in one sitting.
 									<br>
-									<br> I'm still tryna figure this life shit out. I can utilize words like ubiquitous and prestidigitation to the highest levels of efficacy, to weave gut-wrenching tales of drama and romance, realistic enough to maintain the authenticity of a biography,
-									but stretched enough to categorize it as a fantasy. I am fluent in ebonics. If you think the word "Nigga" is inappropriate then we need to have a conversation about words, exclusivity, and their meaning in certain societal contexts.
+									<br> I'm trying to join a team of high-spirited individuals who love to build things...
+									<br> Who spend late nights worrying a coding problem they have no idea how to solve
+									<br> I like having deep conversations about life. I believe everything in life is predestined but by the same token, life is what you make it. Here's a link to my <a href="http://medium.com/@kareemmarch" target="_blank">blog</a>. Tell me if it inspires
+									you! </h3>
 									<br>
-									<br> I'm a hypocrite. If you believe that you aren't, again, we need to have a conversation. I believe everything in life is predestined but by the same token life is what you make it. Bruh I'm just human. Here's a link to my <a href="http://medium.com/@kareemmarch"
-									target="_blank">blog</a>. Tell me if it inspires you. </h3>
-								<p>Life is weird man. People will read something about you and not give you the time of day because of their own convictions.</p>
-								<h2>Contact</h2>
-								<p>If you need an application built, wanna pick my brain, or get in contact with me for a job opportnity, click the email picture above. If it doesn't work just send an email to ignavus.ii@gmail.com</p>
+								<h4>Check out my github above to see current projects I'm working on. The project display of my site is still under construction</h4>
+								<br>
+								<h4>If you need an application built, wanna pick my brain, or get in contact with me for a job opportnity, click the email picture above. If it doesn't work just send an email to ignavus.ii@gmail.com or kareemmarch@gmail.com</h4>
 							</div>
 						</div>
 
@@ -90,19 +104,19 @@
 			</div>
 		</div>
 
-<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone && !vm.showAbout'>
-	<div class="container">
-	  <div class="red flame"></div>
-	  <div class="orange flame"></div>
-	  <div class="yellow flame"></div>
-	  <div class="white flame"></div>
-	  <div class="blue circle"></div>
-	  <div class="black circle"></div>
-	</div>
-</div>
+		<div ng-class="{fadeIn: vm.typingAnimationDone}" ng-show='vm.typingAnimationDone && !vm.showAbout'>
+			<div class="container">
+				<div class="red flame"></div>
+				<div class="orange flame"></div>
+				<div class="yellow flame"></div>
+				<div class="white flame"></div>
+				<div class="blue circle"></div>
+				<div class="black circle"></div>
+			</div>
+		</div>
 
 	</div>
-<!--END OF CONTROLLER -->
+	<!--END OF CONTROLLER -->
 	<!-- Ext Libs -->
 	<script src="jquery/dist/jquery.min.js"></script>
 	<script src="angular/angular.min.js"></script>

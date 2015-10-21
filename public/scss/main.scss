@@ -9,12 +9,16 @@ button.md-accent {
 }
 html,
 body {
-  height: 100%;
+  height: 110%;
   width: 100%;
   font-family: "Roboto";
   font-size: 1.2em;
+  background-color: black;
 }
 .big-text{
+  color: white;
+}
+#ninjaText{
   color: white;
 }
 #about-me {
@@ -90,7 +94,7 @@ a.link {
   color: green;
 }
 .fadeIn {
-  animation: 1s fadeIn;
+  animation: 4s fadeIn;
   animation-fill-mode: forwards;
 }
 #name {
