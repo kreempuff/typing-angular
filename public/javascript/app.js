@@ -18,7 +18,7 @@
   angular.module('app')
     .controller('MainController', MainController);
 
-  MainController.$inject = ['$interval', "$timeout"];
+  MainController.$inject = ['$interval', "$timeout"]; 
 
   function MainController($interval, $timeout) {
     var vm = this;
@@ -136,7 +136,7 @@
         }
         vm.secondType.push(vm.secondMessage[vm.count]);
         vm.count += 1;
-      }, 50);
+      }, 500);
     };
 
 
